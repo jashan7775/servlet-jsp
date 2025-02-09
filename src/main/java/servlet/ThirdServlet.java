@@ -17,4 +17,11 @@ public class ThirdServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.println("<h1>Hello from ThirdServlet!</h1>");
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+        out.println("<h1>Form Submitted Successfully</h1>");
+    }
 }
