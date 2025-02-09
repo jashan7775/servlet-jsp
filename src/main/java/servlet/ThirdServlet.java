@@ -23,8 +23,11 @@ public class ThirdServlet extends HttpServlet {
 
         // handling request :
         String username = req.getParameter("username");
+        System.out.print(username);
+
+        // handling response :
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        out.println("<h1>Form Submitted Successfully for user : </h1>" + username);
+        out.print("<h1>Form Submitted Successfully for user : " + username + "</h1>");
     }
 }
