@@ -20,8 +20,11 @@ public class ThirdServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        // handling request :
+        String username = req.getParameter("username");
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        out.println("<h1>Form Submitted Successfully</h1>");
+        out.println("<h1>Form Submitted Successfully for user : </h1>" + username);
     }
 }
