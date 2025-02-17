@@ -1,21 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app
-    version="4.0"
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:javaee="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
-  <display-name>Archetype Created Web Application</display-name>
+        version="4.0"
+        xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:javaee="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xml="http://www.w3.org/XML/1998/namespace"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <display-name>Archetype Created Web Application</display-name>
 
-  // manually mapping of servlet, we can map one servlet with different urls
-  <servlet>
-    <servlet-name>secondServlet</servlet-name>
-    <servlet-class>servlet.SecondServlet</servlet-class>
-  </servlet>
+    <!--  manually mapping of servlet, we can map one servlet with different urls -->
+    <servlet>
+        <servlet-name>secondServlet</servlet-name>
+        <servlet-class>servlet.SecondServlet</servlet-class>
+    </servlet>
 
-  <servlet-mapping>
-    <servlet-name>secondServlet</servlet-name>
-    <url-pattern>/secondServlet</url-pattern>
-  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>secondServlet</servlet-name>
+        <url-pattern>/secondServlet</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>app_name</param-name>
+        <param-value>servlet-jsp</param-value>
+    </context-param>
+
+    <!-- Defining servlet one -->
+    <servlet>
+        <servlet-name>servletOne</servlet-name>
+        <servlet-class>SessionManagement.ServletOne</servlet-class>
+
+        <!-- Initialize servlet with values -->
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>jashan</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>servletOne</servlet-name>
+        <url-pattern>/servlet-one</url-pattern>
+    </servlet-mapping>
+
+    <!-- Defining servlet two -->
+    <servlet>
+        <servlet-name>servletTwo</servlet-name>
+        <servlet-class>SessionManagement.ServletTwo</servlet-class>
+
+        <!-- Initialize servlet with values -->
+        <init-param>
+            <param-name>mail</param-name>
+            <param-value>jashan@gmail.com</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>servletTwo</servlet-name>
+        <url-pattern>/servlet-two</url-pattern>
+    </servlet-mapping>
 </web-app>
